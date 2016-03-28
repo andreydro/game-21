@@ -48,6 +48,7 @@ while true
     croupier_score += croupier_value_3
     puts "Croupier final score: #{croupier_score}"
   else
+    puts "No"
     break
   end
 end
@@ -58,10 +59,18 @@ if user_score <= 21
     puts "Croupier`s final score: #{croupier_score}"
     puts "You won"
   else
-    puts "Your final score: #{user_score}"
-    puts "Croupier`s final score: #{croupier_score}"
-    puts "You lose"
+    if croupier_score > 21
+      puts "Your final score: #{user_score}"
+      puts "Croupier`s final score: #{croupier_score}"
+      puts "You won"
+    else
+      puts "Your final score: #{user_score}"
+      puts "Croupier`s final score: #{croupier_score}"
+      puts "You lose"
+    end
   end
 else
+  puts "Your final score: #{user_score}"
+  puts "Croupier`s finals score: #{croupier_score}"
   puts "You lose"
 end
