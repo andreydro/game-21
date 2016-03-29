@@ -41,14 +41,18 @@ end
 while true
   puts "Does croupier take one more card?"
   croupier_answer = rand(1..2)
-
-  if croupier_answer == 1
-    croupier_value_3 = get_top_card(cards)
-    puts "Croupier card is: #{croupier_value_3}"
-    croupier_score += croupier_value_3
-    puts "Croupier final score: #{croupier_score}"
+  
+  if croupier_score <= 21
+    if croupier_answer == 1
+      croupier_value_3 = get_top_card(cards)
+      puts "Croupier card is: #{croupier_value_3}"
+      croupier_score += croupier_value_3
+      puts "Croupier final score: #{croupier_score}"
+    else
+      puts "No"
+      break
+    end
   else
-    puts "No"
     break
   end
 end
